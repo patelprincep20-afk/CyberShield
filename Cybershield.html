@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberShield | Security Solutions</title>
+    <link rel="stylesheet" href="CyberShield.css">
+</head>
+<body>
+
+    <!-- 1. Updated Header Navigation -->
+<header>
+    <div class="logo">Cyber<span>Shield</span></div>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#login">Login</a></li>
+            <li><a href="#register">Register</a></li>
+            <li><a href="#contact">Contact</a></li> <!-- Added link -->
+        </ul>
+    </nav>
+</header>
+
+    <!-- 2. Home Section -->
+    <section id="home">
+        <div class="banner">
+            <h1>Secure Your Digital Future</h1>
+            <p>Professional security audits and data protection for your business.</p>
+            <br>
+            <a href="#services" class="btn-main">View Services</a>
+        </div>
+    </section>
+
+    <!-- 3. About Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About CyberShield</h2>
+            <p>CyberShield is a security firm dedicated to protecting small businesses from online threats. Our purpose is to identify vulnerabilities before hackers do. We provide clear, simple reports and technical support to keep your data safe and private.</p>
+        </div>
+    </section>
+
+    <!-- 4. Services Section -->
+    <section id="services" class="bg-alt">
+        <div class="container">
+            <h2>Our Security Features</h2>
+            <div class="row">
+                <div class="box">
+                    <div class="icon">🛡️</div>
+                    <h3>Network Security</h3>
+                    <p>We protect your Wi-Fi and office networks from unauthorized access.</p>
+                </div>
+                <div class="box">
+                    <div class="icon">🔓</div>
+                    <h3>Penetration Testing</h3>
+                    <p>We ethically hack your systems to find and fix weak points.</p>
+                </div>
+                <div class="box">
+                    <div class="icon">📧</div>
+                    <h3>Email Protection</h3>
+                    <p>Stop phishing attacks and malicious attachments from reaching your team.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Login Section -->
+    <section id="login">
+        <div class="form-wrapper">
+            <h2>Client Login</h2>
+            <form id="loginForm">
+                <label>Username</label>
+                <input type="text" id="loginUser">
+                <label>Password</label>
+                <input type="password" id="loginPass">
+                <button type="submit">Access Vault</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 6. Register Section -->
+    <section id="register" class="bg-alt">
+        <div class="form-wrapper">
+            <h2>Start Your Protection</h2>
+            <form id="regForm">
+                <label>Company Name</label>
+                <input type="text" id="regName">
+                <label>Work Email</label>
+                <input type="email" id="regEmail">
+                <label>Create Password</label>
+                <input type="password" id="regPass">
+                <label>Confirm Password</label>
+                <input type="password" id="regConfirmPass">
+                <button type="submit">Create Account</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 7. Full Width Contact Bar -->
+<section id="contact">
+    <h2 class="contact-title">Contact Us</h2>
+    
+    <div class="contact-bar">
+        <!-- Left Column -->
+        <div class="contact-col">
+            <span><b>Name:</b> Prince Patel</span>
+        </div>
+
+        <!-- Right Column -->
+        <div class="contact-col">
+            <span><b>Email:</b> patelprincep20@gmail.com</span>
+        </div>
+    </div>
+</section>
+
+<!-- 8. Footer -->
+<footer>
+    <p>&copy; 2026 CyberShield Security Solutions | All Rights Reserved</p>
+</footer>
+
+    <script src="script.js">
+        document.addEventListener('DOMContentLoaded', () => {
+
+    // 5. Login Validation
+    document.getElementById('loginForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const user = document.getElementById('loginUser').value;
+        const pass = document.getElementById('loginPass').value;
+
+        if (user === "" || pass === "") {
+            alert("Warning: Please enter both username and password.");
+        } else if (pass.length < 6) {
+            alert("Security Notice: Password must be at least 6 characters.");
+        } else {
+            alert("Access Granted. Welcome, " + user);
+        }
+    });
+
+    // 6. Register Validation
+    document.getElementById('regForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('regEmail').value;
+        const p1 = document.getElementById('regPass').value;
+        const p2 = document.getElementById('regConfirmPass').value;
+
+        // Basic Email check
+        if (!email.includes("@") || !email.includes(".")) {
+            alert("Error: Please provide a valid email address.");
+        } 
+        // Password Match check
+        else if (p1 !== p2) {
+            alert("Error: Passwords do not match. Please re-enter.");
+        } 
+        else {
+            alert("Registration Successful! Your security dashboard is being prepared.");
+        }
+    });
+
+});
+    </script>
+</body>
+</html>
